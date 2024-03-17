@@ -936,4 +936,13 @@ join albumexecutor a on e.id = a.executor_id
 join album a2 on a2.id = a.album_id 
 where a2.album_year != 2020;
 
+select c.collection_name 
+from collection c 
+join collectionsong c2 on c.id = c2.collection_id 
+join song s on s.id = c2.song_id 
+join album a on a.id = s.id 
+join collectionsong c3 on a.id = c3.id 
+join executor e on e.id =c3.id 
+where e.executor_name like '%%2 pac%%'
+
 
